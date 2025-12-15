@@ -10,9 +10,6 @@
   <main class="container">
     <header class="header">
       <h1>魑魅魍魉加密</h1>
-      <p class="sub">
-        纯静态（GitHub Pages 可用）。密文字符集严格为：<code>魑魅魍魉</code>
-      </p>
     </header>
 
     <section class="grid">
@@ -38,7 +35,7 @@
           <button id="btnEncClear" class="btn">清空</button>
         </div>
 
-        <label class="label">密文（只含 魑魅魍魉）</label>
+        <label class="label">密文</label>
         <textarea id="cipherOut" class="textarea mono" rows="7" readonly placeholder="加密结果会显示在这里"></textarea>
 
         <div class="actions">
@@ -49,7 +46,7 @@
       <section class="card">
         <h2>解密</h2>
 
-        <label class="label">密文（只含 魑魅魍魉）</label>
+        <label class="label">密文</label>
         <textarea id="cipherIn" class="textarea mono" rows="7" placeholder="粘贴密文"></textarea>
 
         <label class="label">口令</label>
@@ -71,14 +68,6 @@
       <div class="actions">
         <button id="btnSelfTest" class="btn">运行自检（加密后再解密）</button>
       </div>
-      <details class="details">
-        <summary>格式说明</summary>
-        <ul>
-          <li>加密输出为：<code>salt(16B) + iv(12B) + ciphertext</code> 拼接后的字节流</li>
-          <li>再将字节流 base4 编码到四字符集：<code>0→魑 1→魅 2→魍 3→魉</code></li>
-          <li>AES-GCM 自带完整性校验：口令错误或密文被改动会解密失败</li>
-        </ul>
-      </details>
     </section>
 
     <footer class="footer">
